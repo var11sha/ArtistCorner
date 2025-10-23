@@ -1,0 +1,163 @@
+*
+{
+	margin:0;
+	padding:0;
+}
+body{
+    background: linear-gradient(to right, rgb(240, 176, 26), rgb(241, 241, 238));
+    /* background-image:url("../pro_img/background/");
+
+    background-size:cover; 
+    filter:blur(50%);  */
+    
+}
+.logo{
+    height:100px;
+    width:100px;
+    border-radius: 50%;
+}
+.search_bar{
+    margin: 30px 15px 15px 45px;
+    width:400px;
+}
+.topbar{
+    background-color: rgb(240, 185, 22);
+    text-align: center;
+    font-weight: 400;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.navcolor{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
+.quote{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    font-size: 25px;
+    color: rgb(29, 27, 16);
+}
+.dis{
+    position: absolute;
+    top:270px;
+}
+.main{
+    position: absolute;
+    top:850px;
+    left:108px;
+}
+.category{
+    position: absolute;
+    top:1200px;
+    left:100px;
+    right:100px;
+    width:980px;
+	margin:auto;
+
+
+}
+
+.head_cat{
+    border: solid 3px grey;
+    border-radius: 20px 20px 20px 20px;
+    text-align: center;
+    color: rgb(230, 81, 11);
+    padding-top:9px;
+    padding-bottom:9px;
+    box-shadow: 10px 10px 10px 10px;
+    background-color: aliceblue;
+
+}
+.art_explore{
+    border:solid 1px rgb(203, 199, 199);
+    margin-top:50px;
+    padding-top:20px;
+    text-align: center;
+    /* background-image: url("../pro_img/background/section_img.webp"); */
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 2px 2px 5px 5px;
+}
+.art_sec_1{
+    padding:20px 10px 20px 10px;
+}
+.art_sec_2{
+    padding:20px 10px 20px 10px;
+}
+
+.book_explore{
+    border:solid 1px rgb(203, 199, 199);
+    margin-top:50px;
+    padding-top:20px;
+    text-align: center;
+    /* background-image: url("../pro_img/background/section_img.webp"); */
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 2px 2px 5px 5px;
+}
+.book_sec_1{
+    padding:20px 10px 20px 10px;
+}
+.book_sec_2{
+    padding:20px 10px 20px 10px;
+}
+
+.see_more{
+    border: solid 1px grey;
+    padding: 10px 20px 10px 20px;
+    background-color: bisque;
+    border-radius: 20px 20px 20px 20px;
+ }
+ .see_more:hover{
+    background-color: rgb(243, 146, 28);
+    font-weight: 800;
+    color:white;
+ }
+ .see{
+    color:black;
+    font-size: 20px;
+ }
+.footer{
+    position: absolute;
+    top:700%;
+    left:100px;
+    right:100px;
+    width:980px;
+	margin:auto;
+    text-align: center;
+
+}
+.artist_icon{
+    color: orange;
+    text-align: center;
+    font-size:80px;
+    padding:10px 10px 10px 10px;
+}
+.artist_icon:hover{
+    color: rgb(255, 89, 0);
+    font-size: 90px;
+}
+.footer_detail{
+    display: flex;
+}
+.support{
+    padding:25px 80px 10px 80px;
+    text-align: center;
+    
+}
+.copyright{
+     border:solid 1px whitesmoke;
+}
+/* .footer_img{
+    background-image: url("../pro_img/background/footer_img.webp");
+} */
+.radio_gen{
+    display: inline;
+}
+.sign{
+    margin:20px 10px 20px 10px;
+}
+.create_acc{
+    width:95%;
+    text-align: center;
+}
+.signup_foot{
+    text-align: center;
+}
