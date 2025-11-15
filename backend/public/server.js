@@ -3,6 +3,7 @@
 require("dotenv").config({ path: "../.env" });
 const http = require("http");
 const app = require("../src/app.js");
+import eventRoutes from "./routes/eventRoutes.js";
 
 const PORT = process.env.PORT || 5000;
 

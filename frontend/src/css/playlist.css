@@ -1,0 +1,76 @@
+/* src/index.css */
+
+.playlist-page {
+  padding: 20px;
+  text-align: center;
+  background-color: #121212;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.subtitle {
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+.mood-filter {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.mood-filter button {
+  background: #282828;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.mood-filter button.active {
+  background: #1db954; /* Spotify green */
+}
+
+.mood-filter button:hover {
+  background: #1ed760;
+}
+
+.playlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 0 40px;
+}
+
+.playlist-card {
+  background: #181818;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.playlist-card:hover {
+  transform: scale(1.05);
+}
+
+.playlist-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.playlist-card h3 {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.playlist-card p {
+  font-size: 0.9rem;
+  color: #aaa;
+}

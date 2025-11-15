@@ -1,10 +1,10 @@
-const User = require("../models/userModel");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
+import User from "../models/userModel.js";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 
 
 // Signup Controller
-exports.signup = async (req, res) => {
+export const signup = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
@@ -23,12 +23,7 @@ exports.signup = async (req, res) => {
     const newUser = new User({ name, email, password });
     await newUser.save();
 
-    // Generate JWT Token
-    const token = jwt.sign(
-      { id: newUser._id, email: newUser.email },
-      process.env.JWT_SECRET,
-      { expiresIn: "1d" }
-    );
+    
 
     res.status(201).json({
       message: "User registered successfully",
@@ -36,15 +31,15 @@ exports.signup = async (req, res) => {
         id: newUser._id,
         name: newUser.name,
         email: newUser.email,
-      },
-      token
+      }
     });
+      
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
-exports.login = async (req, res) => {
+export const login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -59,15 +54,22 @@ exports.login = async (req, res) => {
     if (!isMatch) {
       return res.status(400).json({ message: "Invalid credentials!" });
     }
+    // Generate JWT Token
+    const token = jwt.sign(
+      { id: user._id, email: user.email },
+      process.env.JWT_SECRET,
+      { expiresIn: "1d" }
+    );
 
     // 3️⃣ If valid → return success + user info
     res.status(200).json({
       message: "Login successful",
       user: {
         id: user._id,
-        username: user.username,
+        username: user.name,
         email: user.email,
       },
+      token
     });
   } catch (err) {
     console.log(err);

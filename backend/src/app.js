@@ -1,12 +1,15 @@
 // app.js — handles middleware, DB connection, and routes
 
-const express = require("express");
-const cors = require("cors");
-const connectDB = require("./config/db");
+import express from "express";
+import cors from "cors";
+import connectDB from "./config/db.js";
+import spotifyRoute from "./routes/SpotifyRoutes.js";
+import eventRoutes from "./routes/eventRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
+
 
 // Initialize express
 const app = express();
-
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -15,8 +18,10 @@ app.use(express.json());
 connectDB();
 
 // Routes
-const authRoutes = require("./routes/authRoutes.js");
 app.use("/api/auth", authRoutes);
+app.use("/api/event", eventRoutes);
+app.use("/api/spotify", spotifyRoute);
+console.log("✅ [App] Spotify routes loaded");
 
 
 // Default route
@@ -24,4 +29,4 @@ app.get("/", (req, res) => {
   res.send("🎨 Artist Corner backend is running smoothly!");
 });
 
-module.exports = app;
+export default app;

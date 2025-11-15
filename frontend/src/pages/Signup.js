@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { signupUser } from "../api/authApi";
-import "../css/index.css";
+import "../css/signup.css";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -30,16 +30,20 @@ const Signup = () => {
         name: formData.fullName, // backend expects username?
         email: formData.email,
         password: formData.password,
+        
       });
 
       setMessage("Signup successful! You can now log in.");
       console.log(result);
+       window.location.href = "/login  ";
     } catch (error) {
       setMessage(error.message || "Signup failed!");
     }
   };
 
   return (
+    <div className="sign-up-page">
+
     <div className="form-container">
       <h2>Signup</h2>
       <form id="signupForm" method="post" onSubmit={handleSubmit}>
@@ -103,9 +107,11 @@ const Signup = () => {
       {message && <p style={{ marginTop: "10px" }}>{message}</p>}
 
       <div className="form-footer">
-        Already have an account? <a href="/login.js">Login</a>
+        Already have an account? <a href="/login">Login</a>
       </div>
     </div>
+    </div>
+
   );
 };
 

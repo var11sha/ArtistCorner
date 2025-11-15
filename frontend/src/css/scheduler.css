@@ -1,0 +1,17 @@
+/* Fix light checkbox visibility */
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #0d6efd;  /* Bootstrap primary blue */
+  cursor: pointer;
+}
+
+.form-check-input:checked {
+  background-color: #0d6efd !important;
+  border-color: #0d6efd !important;
+}
+
+.form-check-label {
+  color: #212529; /* Make label darker and readable */
+  font-weight: 500;
+}
