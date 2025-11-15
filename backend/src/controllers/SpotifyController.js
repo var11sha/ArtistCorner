@@ -1,24 +1,26 @@
 // controllers/spotifyController.js
-import { getTracks, getPlaylist, getPlaylistById } from "../Component/Spotify.js";
+import { 
+  getTracks, 
+  getPlaylist, 
+  getPlaylistById,
+  getAlbums,
+  getArtists,
+  getPodcasts
+} from "../Component/Spotify.js";
 
 export const getTracksByMood = async (req, res) => {
   try {
-    console.log("✅ [SpotifyController] getTracksByMood controller is set up");
     const { mood } = req.query;
     const tracks = await getTracks(mood);
     res.status(200).json({ success: true, mood, tracks });
-    
   } catch (error) {
     console.error("[SpotifyController Error]", error);
-    res.status(500).json({ success: false, message: "Failed to fetch playlist" });
+    res.status(500).json({ success: false, message: "Failed to fetch tracks" });
   }
 };
-console.log("✅ [SpotifyController] getPlaylistByMood controller is set up");
-
 
 export const getPlaylistByMood = async (req, res) => {
   try {
-    console.log("✅ [SpotifyController] getPlaylistByMood controller is set up");
     const { mood } = req.query;
     console.log(`[SpotifyController] Fetching playlist for mood: ${mood}`);
     const playlists = await getPlaylist(mood);
@@ -28,22 +30,43 @@ export const getPlaylistByMood = async (req, res) => {
     res.status(500).json({ success: false, message: "Failed to fetch playlist" });
   }
 };
-console.log("✅ [SpotifyController] getPlaylistByMood controller is set up");
 
+export const getAlbumsByMood = async (req, res) => {
+  try {
+    const { mood } = req.query;
+    console.log(`[SpotifyController] Fetching albums for mood: ${mood}`);
+    const albums = await getAlbums(mood);
+    res.status(200).json({ success: true, mood, albums });
+  } catch (error) {
+    console.error("[SpotifyController Error]", error);
+    res.status(500).json({ success: false, message: "Failed to fetch albums" });
+  }
+};
 
-// export const getPlaylistWithId = async (req, res) => {
-//   try {
-//     console.log("✅ [SpotifyController] getPlaylistWithId controller is set up");
-//     console.log(`[SpotifyController] Request params: ${JSON.stringify(req.params)}`);
-//     const { id } = req.params;
-//     console.log(`[SpotifyController] Fetching playlist by ID: ${id}`);
-//     const playlist = await getPlaylistById(id);
-//     res.status(200).json({ success: true, playlist });
-//   } catch (error) {
-//     console.error("[SpotifyController Error]", error);
-//     res.status(500).json({ success: false, message: "Failed to fetch playlist" });
-//   }
-// };
+export const getArtistsByMood = async (req, res) => {
+  try {
+    const { mood } = req.query;
+    console.log(`[SpotifyController] Fetching artists for mood: ${mood}`);
+    const artists = await getArtists(mood);
+    res.status(200).json({ success: true, mood, artists });
+  } catch (error) {
+    console.error("[SpotifyController Error]", error);
+    res.status(500).json({ success: false, message: "Failed to fetch artists" });
+  }
+};
+
+export const getPodcastsByMood = async (req, res) => {
+  try {
+    const { mood } = req.query;
+    console.log(`[SpotifyController] Fetching podcasts for mood: ${mood}`);
+    const podcasts = await getPodcasts(mood);
+    res.status(200).json({ success: true, mood, podcasts });
+  } catch (error) {
+    console.error("[SpotifyController Error]", error);
+    res.status(500).json({ success: false, message: "Failed to fetch podcasts" });
+  }
+};
+
 
 export const getSinglePlaylist = async (req, res) => {
   try {

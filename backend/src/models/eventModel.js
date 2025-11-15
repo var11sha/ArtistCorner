@@ -33,8 +33,8 @@ const eventSchema = new mongoose.Schema({
   },
   category: {
     type: String, 
-    enum:["Fitness", "Study", "Meal"," Relax", "Travel"] ,   // Fitness, Study, Meal, Relax, Travel, etc.
     default: "Relax",
+    trim: true,
   },
   repeat: {
     type: String,

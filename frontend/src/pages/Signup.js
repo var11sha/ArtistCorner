@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { signupUser } from "../api/authApi";
+import ThemeToggle from "../components/ThemeToggle";
 import "../css/signup.css";
 
 const Signup = () => {
@@ -43,8 +44,10 @@ const Signup = () => {
 
   return (
     <div className="sign-up-page">
-
-    <div className="form-container">
+      <div style={{ position: 'absolute', top: '20px', right: '20px', zIndex: 10 }}>
+        <ThemeToggle />
+      </div>
+      <div className="form-container">
       <h2>Signup</h2>
       <form id="signupForm" method="post" onSubmit={handleSubmit}>
         <div className="form-group">
@@ -104,12 +107,12 @@ const Signup = () => {
         </button>
       </form>
 
-      {message && <p style={{ marginTop: "10px" }}>{message}</p>}
+        {message && <p style={{ marginTop: "10px", textAlign: "center", color: message.includes("successful") ? "#28a745" : "#dc3545" }}>{message}</p>}
 
-      <div className="form-footer">
-        Already have an account? <a href="/login">Login</a>
+        <div className="form-footer">
+          Already have an account? <a href="/login">Login</a>
+        </div>
       </div>
-    </div>
     </div>
 
   );

@@ -17,7 +17,7 @@ export const createEvent = async (eventData) => {
 // ✅ Get all events for user
 export const getUserEvents = async (userId) => {
   try {
-    const res = await axios.get(`${API_URL}/user/${userId}`);
+    const res = await axios.get(`${API_URL}?userId=${userId}`);
     return res.data;
   } catch (error) {
     console.error("Error fetching events:", error);

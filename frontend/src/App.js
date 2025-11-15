@@ -1,14 +1,15 @@
 import AppRoutes from "./routes/AppRoutes";
+import { ThemeProvider } from "./context/ThemeContext";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import './App.css';
 
 function App() {
   return (
-    <div>
-      {/* <h1>Artist Corner</h1> */}
-       <AppRoutes />
-    </div>
+    <ThemeProvider>
+      <div className="app-container">
+        <AppRoutes />
+      </div>
+    </ThemeProvider>
   );
 }
 

@@ -1,0 +1,126 @@
+/* App.css - Global Theme Styles */
+
+:root {
+  /* Dark Theme (Default) - Purple */
+  --dark-bg-primary: #1a0d2e;
+  --dark-bg-secondary: #2d1b4e;
+  --dark-bg-tertiary: #3d2a5e;
+  --dark-text-primary: #ffffff;
+  --dark-text-secondary: #e0d0ff;
+  --dark-accent: #9333ea;
+  --dark-accent-hover: #a855f7;
+  --dark-border: #4c1d95;
+  --dark-card-bg: #2d1b4e;
+  --dark-card-hover: #3d2a5e;
+
+  /* Light Theme */
+  --light-bg-primary: #f8f9fa;
+  --light-bg-secondary: #ffffff;
+  --light-bg-tertiary: #e9ecef;
+  --light-text-primary: #1a0d2e;
+  --light-text-secondary: #4c1d95;
+  --light-accent: #9333ea;
+  --light-accent-hover: #a855f7;
+  --light-border: #e0d0ff;
+  --light-card-bg: #ffffff;
+  --light-card-hover: #f8f9fa;
+}
+
+/* Dark Theme */
+.dark-theme {
+  background-color: var(--dark-bg-primary);
+  color: var(--dark-text-primary);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-theme .card {
+  background-color: var(--dark-card-bg);
+  border-color: var(--dark-border);
+  color: var(--dark-text-primary);
+}
+
+.dark-theme .form-control,
+.dark-theme .form-select {
+  background-color: var(--dark-bg-tertiary);
+  border-color: var(--dark-border);
+  color: var(--dark-text-primary);
+}
+
+.dark-theme .form-control:focus,
+.dark-theme .form-select:focus {
+  background-color: var(--dark-bg-tertiary);
+  border-color: var(--dark-accent);
+  color: var(--dark-text-primary);
+  box-shadow: 0 0 0 0.2rem rgba(147, 51, 234, 0.25);
+}
+
+.dark-theme .btn-primary {
+  background-color: var(--dark-accent);
+  border-color: var(--dark-accent);
+}
+
+.dark-theme .btn-primary:hover {
+  background-color: var(--dark-accent-hover);
+  border-color: var(--dark-accent-hover);
+}
+
+.dark-theme .text-muted {
+  color: var(--dark-text-secondary) !important;
+}
+
+/* Light Theme */
+.light-theme {
+  background-color: var(--light-bg-primary);
+  color: var(--light-text-primary);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light-theme .card {
+  background-color: var(--light-card-bg);
+  border-color: var(--light-border);
+  color: var(--light-text-primary);
+}
+
+.light-theme .form-control,
+.light-theme .form-select {
+  background-color: var(--light-bg-secondary);
+  border-color: var(--light-border);
+  color: var(--light-text-primary);
+}
+
+.light-theme .form-control:focus,
+.light-theme .form-select:focus {
+  background-color: var(--light-bg-secondary);
+  border-color: var(--light-accent);
+  color: var(--light-text-primary);
+  box-shadow: 0 0 0 0.2rem rgba(147, 51, 234, 0.25);
+}
+
+.light-theme .btn-primary {
+  background-color: var(--light-accent);
+  border-color: var(--light-accent);
+}
+
+.light-theme .btn-primary:hover {
+  background-color: var(--light-accent-hover);
+  border-color: var(--light-accent-hover);
+}
+
+.light-theme .text-muted {
+  color: var(--light-text-secondary) !important;
+}
+
+/* App Container */
+.app-container {
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: scale(1.1);
+}
+

@@ -1,4 +1,5 @@
-import { use, useState } from "react";
+import { useState } from "react";
+import ThemeToggle from "../components/ThemeToggle";
 import "../css/login.css";
 
 function Login() {
@@ -32,7 +33,7 @@ function Login() {
         localStorage.setItem("user", JSON.stringify(data.user));
         console.log("User:", data.user);
         //session management
-           window.location.href = "/ ";
+        window.location.href = "/";
         // later we will store token in localStorage
       } else {
         setMessage("❌ " + data.message);
@@ -44,62 +45,52 @@ function Login() {
   };
 
   return (
-    // <div style={{ margin: "30px" }}>
-    //   <h2>Login</h2>
-    //   <form onSubmit={handleSubmit}>
-    //     <input
-    //       type="email"
-    //       name="email"
-    //       placeholder="Enter Email"
-    //       onChange={handleChange}
-    //       value={formData.email}
-    //     /><br /><br />
-        
-    //     <input
-    //       type="password"
-    //       name="password"
-    //       placeholder="Enter Password"
-    //       onChange={handleChange}
-    //       value={formData.password}
-    //     /><br /><br />
-
-    //     <button type="submit">Login</button>
-    //   </form>
-
-    //   <p>{message}</p>
-    // </div>
-
     <div className="login-page">
-<div class="form-container">
-    <h2>Login</h2>
-    <form id="loginForm" onSubmit={handleSubmit}>
-      {/* Email Field */}
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="name@example.com" 
-        onChange={handleChange}
-          value={formData.email} required />
+      <div style={{ position: 'absolute', top: '20px', right: '20px', zIndex: 10 }}>
+        <ThemeToggle />
       </div>
+      <div className="form-container">
+        <h2>Login</h2>
+        <form id="loginForm" onSubmit={handleSubmit}>
+          {/* Email Field */}
+          <div className="form-group">
+            <label htmlFor="email">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="name@example.com" 
+              onChange={handleChange}
+              value={formData.email} 
+              required 
+            />
+          </div>
 
-       {/* Password Field  */}
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password" onChange={handleChange}
-          value={formData.password} required/>
+          {/* Password Field */}
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              placeholder="Enter your password" 
+              onChange={handleChange}
+              value={formData.password} 
+              required
+            />
+          </div>
+
+          {/* Submit Button */}
+          <button type="submit" className="btn-submit">Login</button>
+        </form>
+        
+        {message && <p style={{ marginTop: "10px", textAlign: "center", color: message.includes("✅") ? "#28a745" : "#dc3545" }}>{message}</p>}
+
+        <div className="form-footer">
+          Don't have an account? <a href="/signup">Sign up</a>
+        </div>
       </div>
-
-       {/* Submit Button  */}
-      <button type="submit" class="btn-submit" >Login</button>
-    </form>
-       
-       {message && <p style={{ marginTop: "10px" }}>{message}</p>}
-
-    <div class="form-footer">
-      Don't have an account?  <a href="/signup">Sign up</a>
     </div>
-  </div>
-    </div>
-    
   );
 }
 

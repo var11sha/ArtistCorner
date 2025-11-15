@@ -4,15 +4,15 @@ import {
   getEventsByUser,
   updateEvent,
   deleteEvent,
-} from "../controllers/EventController.js";
+} from "../controllers/eventController.js";
 
 const router = express.Router();
 
-router.post("/", createEvent);                  // POST /api/events
-router.get("/", getEventsByUser);        // GET /api/events/:userId
-router.get("/:eventId", getEventsByUser);        // GET /api/events/:userId
-router.put("/:eventId", updateEvent);           // PUT /api/events/:eventId
-router.delete("/:eventId", deleteEvent);        // DELETE /api/events/:eventId
+router.post("/", createEvent);                  // POST /api/event
+router.get("/", getEventsByUser);              // GET /api/event?userId=xxx
+router.get("/:eventId", getEventsByUser);      // GET /api/event/:eventId
+router.put("/:eventId", updateEvent);           // PUT /api/event/:eventId
+router.delete("/:eventId", deleteEvent);       // DELETE /api/event/:eventId
 
 // module.exports = router;
 export default router;
